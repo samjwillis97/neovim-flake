@@ -1,0 +1,5 @@
+{ pkgs }:
+{
+  dependencies = with pkgs; [
+  ];
+}

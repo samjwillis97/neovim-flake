@@ -1,36 +1,43 @@
 {
-    description = "Sam's Neovim";
+  description = "Sam's Neovim 😇";
 
-    inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-        
-        # Additional Neovim Plugins
-        nixneovimplugins = {
-            url = "github:jooooscha/nixpkgs-vim-extra-plugins";
-        };
+  inputs = {
+    nixpkgs = {
+        url = "github:NixOS/nixpkgs";
+    };
+    neovim = {
+        url = "github:neovim/neovim/stable?dir=contrib";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
+  outputs = { self, nixpkgs, neovim, ... }:
+  let
+    # TODO I want this to be a list of systems, and output all the packages I want
+    system = "aarch64-darwin";
+
+    # overrides neovim with neovim from flake inputs.
+    overlayFlakeInputs = prev: final: {
+      neovim = neovim.packages.${system}.neovim;
     };
 
-    outputs = { self, nixpkgs, nixneovimplugins, ... }@inputs:
-    let
-        lib = import ./lib;
-    in
-    {
-        apps = lib.withDefaultSystems (sys: {
-            nvim = {
-                type = "app";
-                program = "${self.defaultPackage."${sys}"}/bin/nvim";
-            };
-        });
-
-        defaultApp = lib.withDefaultSystems (sys: {
-            type = "app";
-            program = "${self.defaultPackage."${sys}"}/bin/nvim";
-        });
-
-        defaultPackage = lib.withDefaultSystems (sys: self.packages."${sys}".neovimSW);
-
-        packages = lib.withDefaultSystems (sys: {
-            /* neovimSW = */ 
-        });
+    # define my new package myNeovim.
+    overlayMyNeovim = prev: final: {
+      myNeovim = import ./packages/myNeovim.nix {
+        pkgs = final;
+      };
     };
+
+    pkgs = import nixpkgs {
+      system = system;
+      overlays = [ overlayFlakeInputs overlayMyNeovim ];
+    };
+  in
+  {
+    packages.${system}.default = pkgs.myNeovim;
+    apps.${system}.default = {
+        type = "app";
+        program = "${pkgs.myNeovim}/bin/nvim";
+    };
+  };
 }
