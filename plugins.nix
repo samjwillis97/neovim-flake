@@ -39,6 +39,9 @@ with pkgs.vimPlugins; [
     p.nix
   ]))
 
+  ## File Navigation
+  nvim-tree-lua
+
   ## Primeagen Harpoon
   harpoon
 ]
