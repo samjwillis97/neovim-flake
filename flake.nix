@@ -3,41 +3,49 @@
 
   inputs = {
     nixpkgs = {
-        url = "github:NixOS/nixpkgs";
+      url = "github:NixOS/nixpkgs";
     };
+
     neovim = {
-        url = "github:neovim/neovim/stable?dir=contrib";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:neovim/neovim/stable?dir=contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    flake-utils = {
+      url = "github:numtide/flake-utils";
     };
   };
 
-  outputs = { self, nixpkgs, neovim, ... }:
-  let
-    # TODO I want this to be a list of systems, and output all the packages I want
-    system = "aarch64-darwin";
+  outputs = { self, nixpkgs, flake-utils, neovim, ... }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        # overrides neovim with neovim from flake inputs.
+        overlayFlakeInputs = prev: final: {
+          neovim = neovim.packages.${system}.neovim;
+        };
 
-    # overrides neovim with neovim from flake inputs.
-    overlayFlakeInputs = prev: final: {
-      neovim = neovim.packages.${system}.neovim;
-    };
+        # define my new package myNeovim.
+        overlayMyNeovim = prev: final: {
+          myNeovim = import ./packages/myNeovim.nix {
+            pkgs = final;
+          };
+        };
 
-    # define my new package myNeovim.
-    overlayMyNeovim = prev: final: {
-      myNeovim = import ./packages/myNeovim.nix {
-        pkgs = final;
-      };
-    };
+        pkgs = import nixpkgs {
+          system = system;
+          overlays = [ overlayFlakeInputs overlayMyNeovim ];
+        };
+      in
+      {
+        packages = rec {
+            nvim = pkgs.myNeovim;
+            default = nvim;
+        };
 
-    pkgs = import nixpkgs {
-      system = system;
-      overlays = [ overlayFlakeInputs overlayMyNeovim ];
-    };
-  in
-  {
-    packages.${system}.default = pkgs.myNeovim;
-    apps.${system}.default = {
-        type = "app";
-        program = "${pkgs.myNeovim}/bin/nvim";
-    };
-  };
+        apps = rec {
+            nvim = flake-utils.lib.mkApp { drv = self.packages.${system}.nvim ; };
+            default = nvim;
+        };
+      }
+    );
 }
