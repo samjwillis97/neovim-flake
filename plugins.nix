@@ -62,6 +62,9 @@ with pkgs.vimPlugins; [
   lspkind-nvim
   omnisharp-extended-lsp-nvim
 
+  ## Formatter
+  formatter-nvim
+
   ## File Navigation
   nvim-tree-lua
 ]
