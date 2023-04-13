@@ -9,7 +9,6 @@ vim.api.nvim_set_keymap("n", "<leader>w", ":Telescope grep_string<CR>", { norema
 vim.api.nvim_set_keymap("n", "<leader>b", ":Telescope buffers<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>h", ":Telescope help_tags<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>B", ":Telescope current_buffer_fuzzy_find<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>d", ":Telescope diagnostics<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "gd", ":Telescope lsp_definitions<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "gi", ":Telescope lsp_implementations<CR>", { noremap = true })

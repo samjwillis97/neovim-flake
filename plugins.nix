@@ -28,7 +28,6 @@ with pkgs.vimPlugins; [
   harpoon
   symbols-outline-nvim
   Shade-nvim
-  # statuscol
 
   ## Telescope
   telescope-nvim
@@ -63,6 +62,8 @@ with pkgs.vimPlugins; [
   cmp-cmdline
   lspkind-nvim
   omnisharp-extended-lsp-nvim
+  trouble-nvim
+  fidget-nvim
 
   ## Formatter
   formatter-nvim
@@ -74,4 +75,8 @@ with pkgs.vimPlugins; [
   nvim-dap
   nvim-dap-ui
   nvim-dap-virtual-text
+
+  ## Evaluating
+  # statuscol
+  # nvim-lightbulb
 ]

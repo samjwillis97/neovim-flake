@@ -1,3 +1,9 @@
+require("trouble").setup({})
+require("fidget").setup({})
+
+-- Trouble Keybinding
+vim.api.nvim_set_keymap("n", "<leader>d", ":TroubleToggle<CR>", { noremap = true })
+
 local cmp = require("cmp")
 local lspkind = require("lspkind")
 
