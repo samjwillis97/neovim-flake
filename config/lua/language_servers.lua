@@ -72,6 +72,7 @@ local on_attach = function(client, bufnr)
 	-- vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
 	vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
 	vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
+	vim.keymap.set("n", "<space>a", ":CodeActionMenu<CR>", bufopts)
 	vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, bufopts)
 end
 

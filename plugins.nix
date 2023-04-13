@@ -64,6 +64,7 @@ with pkgs.vimPlugins; [
   omnisharp-extended-lsp-nvim
   trouble-nvim
   fidget-nvim
+  nvim-code-action-menu
 
   ## Formatter
   formatter-nvim
