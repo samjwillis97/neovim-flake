@@ -8,7 +8,7 @@ with pkgs.vimPlugins; [
   dashboard-nvim
 
   ## Statusline
-  lualine-nvim # TODO: Config
+  lualine-nvim
 
   ## Must Haves from VIM
   vim-commentary
