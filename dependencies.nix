@@ -25,6 +25,11 @@
     nil
     lua-language-server
 
+    ## Debug Adapter Protocols
+    delve
+    python310Packages.debugpy
+    netcoredbg
+
     ## Formatters
     gofumpt
     black
