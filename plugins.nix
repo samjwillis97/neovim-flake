@@ -14,6 +14,9 @@ with pkgs.vimPlugins; [
   vim-surround
   vim-tmux-navigator
 
+  ## which-key (doom emacs like)
+  which-key-nvim
+
   ## Git
   gitsigns-nvim
   vim-fugitive
