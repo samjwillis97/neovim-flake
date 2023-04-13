@@ -5,6 +5,7 @@ with pkgs.vimPlugins; [
   nvim-web-devicons
   nvim-colorizer-lua
   indent-blankline-nvim
+  dashboard-nvim
 
   ## Statusline
   lualine-nvim # TODO: Config
