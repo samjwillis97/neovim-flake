@@ -11,6 +11,7 @@ From anywhere with nix: `nix run github:samjwillis97/neovim-flake`
 
 ## TODO
 
+- Investigate `vim.treesitter.query.get_node_text()`
 - Shade
 - Last Key thing from doom emacs
 - Cachix

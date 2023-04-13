@@ -24,9 +24,9 @@
     rnix-lsp
     rust-analyzer
     nil
+    lua-language-server
 
     ## Formatters
-    # TODO: Nix
     gofumpt
     black
     nodePackages.prettier
