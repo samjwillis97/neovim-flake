@@ -23,6 +23,7 @@
     nodePackages.vscode-css-languageserver-bin
     rnix-lsp
     rust-analyzer
+    nil
 
     ## Formatters
     # TODO: Nix

@@ -15,6 +15,7 @@ local lsp_to_configure = {
 	"cssls",
 	"rnix",
 	"rust_analyzer",
+	"nil_ls",
 }
 
 -- Window Styling
