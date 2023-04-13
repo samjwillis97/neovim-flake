@@ -76,7 +76,24 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "neovim": "neovim",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "statuscol": "statuscol"
+      }
+    },
+    "statuscol": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1681341234,
+        "narHash": "sha256-oVnQBcSbBTE9mBdYfG9SynuVtfnAh1ulP0YKC0MqWBU=",
+        "owner": "luukvbaal",
+        "repo": "statuscol.nvim",
+        "rev": "8b6ed0e19bdc7d4d40b33fcc0db1c96c95c6566c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "luukvbaal",
+        "repo": "statuscol.nvim",
+        "type": "github"
       }
     },
     "systems": {
