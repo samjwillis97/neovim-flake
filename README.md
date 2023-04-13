@@ -7,3 +7,6 @@ and, https://github.com/PrimaMateria/blog-neovim-nix
 
 - Dashboard (opening screen)
 - Last Key thing from doom emacs
+- Cachix
+- Provider different versions
+- Easier disabling/enabling of plugins/features
