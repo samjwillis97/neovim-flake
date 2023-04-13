@@ -1,5 +1,6 @@
 require("trouble").setup({})
 require("fidget").setup({})
+require("cmp").setup({})
 
 -- Trouble Keybinding
 vim.api.nvim_set_keymap("n", "<leader>d", ":TroubleToggle<CR>", { noremap = true })
@@ -116,6 +117,8 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 	}, {
 		{ name = "buffer" },
+	}, {
+		{ name = "vsnip" },
 	}),
 })
 

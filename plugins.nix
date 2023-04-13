@@ -65,6 +65,8 @@ with pkgs.vimPlugins; [
   trouble-nvim
   fidget-nvim
   nvim-code-action-menu
+  vim-vsnip
+  cmp-vsnip
 
   ## Formatter
   formatter-nvim
