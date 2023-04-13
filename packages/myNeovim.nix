@@ -9,10 +9,10 @@ let
     paths = deps.dependencies;
     # see: https://ertt.ca/blog/2022/01-12-nix-symlinkJoin-nodePackages/
     postBuild = ''
-        for f in $out/lib/node_modules/.bin/*; do
-           path="$(readlink --canonicalize-missing "$f")"
-           ln -s "$path" "$out/bin/$(basename $f)"
-        done
+      for f in $out/lib/node_modules/.bin/*; do
+         path="$(readlink --canonicalize-missing "$f")"
+         ln -s "$path" "$out/bin/$(basename $f)"
+      done
     '';
   };
 
@@ -22,8 +22,7 @@ let
       packages.all.start = plugins;
     };
   };
-in pkgs.writeShellApplication
-{
+in pkgs.writeShellApplication {
   name = "nvim";
   runtimeInputs = [ neovimDependencies ];
   text = ''

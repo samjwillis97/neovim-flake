@@ -16,7 +16,7 @@ local lsp_to_configure = {
 	"rnix",
 	"rust_analyzer",
 	"nil_ls",
-    "lua_ls"
+	"lua_ls",
 }
 
 -- Window Styling
