@@ -32,5 +32,6 @@
     nodePackages.prettier
     stylua
     rustfmt
+    nixfmt
   ];
 }
