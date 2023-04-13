@@ -13,7 +13,6 @@ From anywhere with nix: `nix run github:samjwillis97/neovim-flake`
 
 - Investigate `vim.treesitter.query.get_node_text()`
 - Fix debugger
-- Shade
 - Cachix
-- Provider different versions
+- Provider different versions - full/minimal/languages
 - Easier disabling/enabling of plugins/features
