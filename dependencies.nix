@@ -23,5 +23,13 @@
     nodePackages.vscode-css-languageserver-bin
     rnix-lsp
     rust-analyzer
+
+    ## Formatters
+    # TODO: Nix
+    gofumpt
+    black
+    nodePackages.prettier
+    stylua
+    rustfmt
   ];
 }
