@@ -1,5 +1,14 @@
 require("nvim-autopairs").setup({})
 require("symbols-outline").setup()
+require("shade").setup({
+	overlay_opacity = 50,
+	opacity_step = 1,
+	keys = {
+		brightness_up = "<C-Up>",
+		brightness_down = "<C-Down>",
+		toggle = "<Leader>s",
+	},
+})
 
 ---- Harpoon Keybindings
 vim.api.nvim_set_keymap("n", "<leader>a", ':lua require("harpoon.mark").add_file()<CR>', { noremap = true })

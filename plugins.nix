@@ -27,6 +27,7 @@ with pkgs.vimPlugins; [
   nvim-autopairs
   harpoon
   symbols-outline-nvim
+  Shade-nvim
 
   ## Telescope
   telescope-nvim
