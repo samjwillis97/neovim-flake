@@ -2,11 +2,27 @@ require("gitsigns").setup()
 require("nvim-web-devicons").setup({ default = true })
 require("indent_blankline").setup({})
 
+local banner = {
+    [[]],
+    [[]],
+    [[]],
+    [[]],
+    [[  ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗]],
+    [[  ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║]],
+    [[  ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║]],
+    [[  ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║]],
+    [[  ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║]],
+    [[  ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝]],
+    [[]],
+    [[]],
+}
+
 require("dashboard").setup({
 	theme = "hyper",
 	config = {
+        header = banner,
 		week_header = {
-			enable = true,
+			enable = false,
 		},
 		shortcut = {
 			{ desc = " Update", group = "@property", action = "Lazy update", key = "u" },
@@ -33,5 +49,6 @@ require("dashboard").setup({
 		},
 	},
 })
+
 
 vim.cmd.colorscheme("catppuccin")

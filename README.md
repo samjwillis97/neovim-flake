@@ -11,7 +11,7 @@ From anywhere with nix: `nix run github:samjwillis97/neovim-flake`
 
 ## TODO
 
-- Dashboard (opening screen)
+- Shade
 - Last Key thing from doom emacs
 - Cachix
 - Provider different versions
