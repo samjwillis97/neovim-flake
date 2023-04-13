@@ -51,6 +51,17 @@ with pkgs.vimPlugins; [
     p.nix
   ]))
 
+  ## Language Server Protocol
+  ## TODO: Evaluate these
+  nvim-lspconfig
+  nvim-cmp
+  cmp-nvim-lsp
+  cmp-buffer
+  cmp-path
+  cmp-cmdline
+  lspkind-nvim
+  omnisharp-extended-lsp-nvim
+
   ## File Navigation
   nvim-tree-lua
 ]
