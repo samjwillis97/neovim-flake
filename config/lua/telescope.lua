@@ -13,4 +13,3 @@ vim.api.nvim_set_keymap("n", "<leader>d", ":Telescope diagnostics<CR>", { norema
 vim.api.nvim_set_keymap("n", "gd", ":Telescope lsp_definitions<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "gi", ":Telescope lsp_implementations<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>o", ":SymbolsOutline<CR>", { noremap = true })

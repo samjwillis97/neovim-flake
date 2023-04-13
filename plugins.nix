@@ -22,6 +22,7 @@ with pkgs.vimPlugins; [
   nvim-lastplace
   nvim-autopairs
   harpoon
+  symbols-outline-nvim
 
   ## Telescope
   telescope-nvim
