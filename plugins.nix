@@ -67,4 +67,9 @@ with pkgs.vimPlugins; [
 
   ## File Navigation
   nvim-tree-lua
+
+  ## Debug Adapter Protocol
+  nvim-dap
+  nvim-dap-ui
+  nvim-dap-virtual-text
 ]

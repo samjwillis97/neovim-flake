@@ -12,8 +12,8 @@ From anywhere with nix: `nix run github:samjwillis97/neovim-flake`
 ## TODO
 
 - Investigate `vim.treesitter.query.get_node_text()`
+- Fix debugger
 - Shade
-- Last Key thing from doom emacs
 - Cachix
 - Provider different versions
 - Easier disabling/enabling of plugins/features
