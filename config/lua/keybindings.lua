@@ -31,22 +31,6 @@ vim.api.nvim_set_keymap("n", "GG", "GGzz", { noremap = true })
 vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true })
 vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true })
 
----- NVIMTree
--- vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true })
--- vim.api.nvim_set_keymap("n", ",n", ":NvimTreeFindFile<CR>", { noremap = true })
-
----- GitSigns
--- vim.api.nvim_set_keymap("n", "[g", ":Gitsigns prev_hunk<CR>", { noremap = true })
--- vim.api.nvim_set_keymap("n", "]g", ":Gitsigns next_hunk<CR>", { noremap = true })
-
----- Harpoon
--- vim.api.nvim_set_keymap("n", "<leader>a", ':lua require("harpoon.mark").add_file()<CR>', { noremap = true })
--- vim.api.nvim_set_keymap("n", "<C-a>", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true })
--- vim.api.nvim_set_keymap("n", "<leader>1", ':lua require("harpoon.ui").nav_file(1)<CR>', { noremap = true })
--- vim.api.nvim_set_keymap("n", "<leader>2", ':lua require("harpoon.ui").nav_file(2)<CR>', { noremap = true })
--- vim.api.nvim_set_keymap("n", "<leader>3", ':lua require("harpoon.ui").nav_file(3)<CR>', { noremap = true })
--- vim.api.nvim_set_keymap("n", "<leader>4", ':lua require("harpoon.ui").nav_file(4)<CR>', { noremap = true })
-
 ---- Code Navigation + LSP
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { noremap = true })
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, { noremap = true })

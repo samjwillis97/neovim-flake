@@ -4,6 +4,7 @@ with pkgs.vimPlugins; [
   catppuccin-nvim
   nvim-web-devicons
   nvim-colorizer-lua
+  indent-blankline-nvim
 
   ## Statusline
   lualine-nvim # TODO: Config
@@ -11,16 +12,22 @@ with pkgs.vimPlugins; [
   ## Must Haves from VIM
   vim-commentary
   vim-surround
-  vim-fugitive
   vim-tmux-navigator
+
+  ## Git
+  gitsigns-nvim
+  vim-fugitive
+
+  ## QoL
+  nvim-lastplace
+  nvim-autopairs
+  harpoon
 
   ## Telescope
   telescope-nvim
   telescope-fzf-native-nvim
   telescope-fzf-native-nvim
   (nvim-treesitter.withPlugins (p: [
-    p.c
-    p.java
     p.json
     p.jsonc
     p.yaml
@@ -41,7 +48,4 @@ with pkgs.vimPlugins; [
 
   ## File Navigation
   nvim-tree-lua
-
-  ## Primeagen Harpoon
-  harpoon
 ]

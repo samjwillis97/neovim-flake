@@ -1,7 +1,3 @@
----- Keybindings
-vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", ",n", ":NvimTreeFindFile<CR>", { noremap = true })
-
 local HEIGHT_RATIO = 0.8 -- You can change this
 local WIDTH_RATIO = 0.5 -- You can change this too
 
@@ -40,3 +36,7 @@ require("nvim-tree").setup({
 		dotfiles = false,
 	},
 })
+
+---- Keybindings
+vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", ",n", ":NvimTreeFindFile<CR>", { noremap = true })
