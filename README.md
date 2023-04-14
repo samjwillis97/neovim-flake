@@ -11,13 +11,13 @@ From anywhere with nix: `nix run github:samjwillis97/neovim-flake`
 
 ## Sample Pictures
 
-![Welcome Screen](assest/Welcome Screen.png)
+![Welcome Screen](assets/Welcome.png)
 
 
-![Editor](assest/Editor.png)
+![Editor](assets/Editor.png)
 
 
-![File Tree](assest/Filetree.png)
+![File Tree](assets/Filetree.png)
 
 ## TODO
 
