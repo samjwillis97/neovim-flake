@@ -9,8 +9,19 @@ From the repo: `nix run`
 
 From anywhere with nix: `nix run github:samjwillis97/neovim-flake`
 
+## Sample Pictures
+
+![Welcome Screen](assest/Welcome Screen.png)
+
+
+![Editor](assest/Editor.png)
+
+
+![File Tree](assest/Filetree.png)
+
 ## TODO
 
+- Ominsharp currently broken see: https://github.com/OmniSharp/omnisharp-roslyn/issues/2483
 - Investigate `vim.treesitter.query.get_node_text()`
 - Fix debugger
 - Cachix
