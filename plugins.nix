@@ -28,6 +28,7 @@ with pkgs.vimPlugins; [
   harpoon
   symbols-outline-nvim
   Shade-nvim
+  todo-comments-nvim
 
   ## Telescope
   telescope-nvim

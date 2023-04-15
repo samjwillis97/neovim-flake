@@ -9,6 +9,7 @@ require("shade").setup({
 		toggle = "<Leader>s",
 	},
 })
+require("todo-comments").setup({})
 
 ---- Harpoon Keybindings
 vim.api.nvim_set_keymap("n", "<leader>a", ':lua require("harpoon.mark").add_file()<CR>', { noremap = true })
@@ -20,3 +21,6 @@ vim.api.nvim_set_keymap("n", "<leader>4", ':lua require("harpoon.ui").nav_file(4
 
 ---- Outline
 vim.api.nvim_set_keymap("n", "<leader>o", ":SymbolsOutline<CR>", { noremap = true })
+
+---- TODO Comments
+vim.api.nvim_set_keymap("n", "<leader>t", ":TodoTrouble<CR>", { noremap = true })
