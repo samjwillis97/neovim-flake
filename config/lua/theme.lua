@@ -1,6 +1,7 @@
 require("gitsigns").setup()
 require("nvim-web-devicons").setup({ default = true })
 require("indent_blankline").setup({})
+require("colorizer").setup()
 
 local banner = {
 	[[]],
