@@ -1,3 +1,4 @@
+require("treesitter-context").setup({})
 require("nvim-treesitter.configs").setup({
 	highlight = {
 		enable = true,

@@ -27,7 +27,6 @@ with pkgs.vimPlugins; [
   nvim-autopairs
   harpoon
   symbols-outline-nvim
-  Shade-nvim
   todo-comments-nvim
 
   ## Telescope
@@ -52,6 +51,7 @@ with pkgs.vimPlugins; [
     p.html
     p.nix
   ]))
+  nvim-treesitter-context
 
   ## Language Server Protocol
   ## TODO: Evaluate these
