@@ -2,6 +2,7 @@
 with pkgs.vimPlugins; [
   ## Theme
   catppuccin-nvim
+  tokyonight-nvim
   nvim-web-devicons
   nvim-colorizer-lua
   indent-blankline-nvim

@@ -38,4 +38,4 @@ require("dashboard").setup({
 	},
 })
 
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("tokyonight-moon")
