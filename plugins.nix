@@ -3,6 +3,9 @@ with pkgs.vimPlugins; [
   ## Theme
   catppuccin-nvim
   tokyonight-nvim
+  dracula-nvim
+  gruvbox
+  onedarkpro-nvim
   nvim-web-devicons
   nvim-colorizer-lua
   indent-blankline-nvim
