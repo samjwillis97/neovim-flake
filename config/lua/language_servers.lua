@@ -1,6 +1,9 @@
 require("trouble").setup({})
 require("fidget").setup({})
 require("cmp").setup({})
+require("lsp_signature").setup({
+	hint_enable = false,
+})
 
 -- Trouble Keybinding
 vim.api.nvim_set_keymap("n", "<leader>d", ":TroubleToggle<CR>", { noremap = true })
