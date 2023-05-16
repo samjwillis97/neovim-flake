@@ -5,6 +5,7 @@ with pkgs.vimPlugins; [
   tokyonight-nvim
   dracula-nvim
   gruvbox
+  mini-nvim
   onedarkpro-nvim
   nvim-web-devicons
   nvim-colorizer-lua
@@ -67,6 +68,7 @@ with pkgs.vimPlugins; [
   cmp-cmdline
   lspkind-nvim
   omnisharp-extended-lsp-nvim
+  lsp_signature-nvim
   trouble-nvim
   fidget-nvim
   nvim-code-action-menu
