@@ -1,15 +1,11 @@
 require("trouble").setup({})
 require("fidget").setup({})
-require("cmp").setup({})
 require("lsp_signature").setup({
 	hint_enable = false,
 })
 
 -- Trouble Keybinding
 vim.api.nvim_set_keymap("n", "<leader>d", ":TroubleToggle<CR>", { noremap = true })
-
-local cmp = require("cmp")
-local lspkind = require("lspkind")
 
 local lsp_to_configure = {
 	"pyright",
@@ -28,32 +24,6 @@ local lsp_to_configure = {
 	"nil_ls",
 	"lua_ls",
 }
-
--- Window Styling
-local border = {
-	{ "╭", "FloatBorder" },
-	{ "─", "FloatBorder" },
-	{ "╮", "FloatBorder" },
-	{ "│", "FloatBorder" },
-	{ "╯", "FloatBorder" },
-	{ "─", "FloatBorder" },
-	{ "╰", "FloatBorder" },
-	{ "│", "FloatBorder" },
-}
-
--- LSP settings (for overriding per client)
--- local handlers = {
--- 	["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
--- 	["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
--- }
-
--- To instead override globally
-local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-	opts = opts or {}
-	opts.border = opts.border or border
-	return orig_util_open_floating_preview(contents, syntax, opts, ...)
-end
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -79,51 +49,6 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<space>a", ":CodeActionMenu<CR>", bufopts)
 	vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, bufopts)
 end
-
-cmp.setup({
-	snippet = {
-		-- REQUIRED - you must specify a snippet engine
-		expand = function(args)
-			vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-			-- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-			-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-			-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-		end,
-	},
-	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
-	},
-	mapping = cmp.mapping.preset.insert({
-		-- C-n, C-p for next and previous in menu
-		["<C-b>"] = cmp.mapping.scroll_docs(-4),
-		-- ['<C-f>'] = cmp.mapping.scroll_docs(4),
-		["<C-B>"] = cmp.mapping.scroll_docs(4),
-		["<C-Space>"] = cmp.mapping.complete(),
-		["<C-e>"] = cmp.mapping.abort(),
-		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-	}),
-	formatting = {
-		format = lspkind.cmp_format({
-			mode = "symbol", -- show only symbol annotations
-			maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-
-			-- The function below will be called before any actual modifications from lspkind
-			-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-			-- before = function (entry, vim_item)
-			--   ...
-			--   return vim_item
-			-- end
-		}),
-	},
-	sources = cmp.config.sources({
-		{ name = "nvim_lsp" },
-	}, {
-		{ name = "buffer" },
-	}, {
-		{ name = "vsnip" },
-	}),
-})
 
 local lsp_flags = {
 	-- This is the default in Nvim 0.7+
@@ -181,31 +106,4 @@ require("lspconfig").omnisharp.setup({
 	-- Only run analyzers against open files when 'enableRoslynAnalyzers' is
 	-- true
 	analyze_open_documents_only = false,
-})
-
--- Set configuration for specific filetype.
-cmp.setup.filetype("gitcommit", {
-	sources = cmp.config.sources({
-		{ name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
-	}, {
-		{ name = "buffer" },
-	}),
-})
-
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline("/", {
-	mapping = cmp.mapping.preset.cmdline(),
-	sources = {
-		{ name = "buffer" },
-	},
-})
-
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(":", {
-	mapping = cmp.mapping.preset.cmdline(),
-	sources = cmp.config.sources({
-		{ name = "path" },
-	}, {
-		{ name = "cmdline" },
-	}),
 })
