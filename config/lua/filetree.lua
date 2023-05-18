@@ -1,5 +1,5 @@
-local HEIGHT_RATIO = 0.8 -- You can change this
-local WIDTH_RATIO = 0.5 -- You can change this too
+local HEIGHT_RATIO = 0.75 -- You can change this
+local WIDTH_RATIO = 0.45 -- You can change this too
 
 require("nvim-tree").setup({
 	sort_by = "case_sensitive",
@@ -16,7 +16,7 @@ require("nvim-tree").setup({
 				local center_x = (screen_w - window_w) / 2
 				local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
 				return {
-					border = "rounded",
+					border = "none",
 					relative = "editor",
 					row = center_y,
 					col = center_x,
@@ -29,11 +29,17 @@ require("nvim-tree").setup({
 			return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
 		end,
 	},
+	-- view = {
+	-- 	width = 30,
+	-- },
 	renderer = {
 		group_empty = true,
 	},
 	filters = {
 		dotfiles = false,
+	},
+	filesystem_watchers = {
+		enable = true,
 	},
 })
 
