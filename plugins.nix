@@ -66,7 +66,7 @@ with pkgs.vimPlugins; [
   cmp-path
   cmp-cmdline
   lspkind-nvim
-  omnisharp-extended-lsp-nvim
+  # omnisharp-extended-lsp-nvim
   lsp_signature-nvim
   trouble-nvim
   fidget-nvim

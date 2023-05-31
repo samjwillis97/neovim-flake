@@ -14,9 +14,9 @@
     golangci-lint
     nodePackages.svelte-language-server
     # angularls
-    dotnet-sdk_7
-    dotnet-runtime_7
-    omnisharp-roslyn
+    # dotnet-sdk_7
+    # dotnet-runtime_7
+    # omnisharp-roslyn
     nodePackages.bash-language-server
     nodePackages.vscode-langservers-extracted
     nodePackages.vscode-json-languageserver
