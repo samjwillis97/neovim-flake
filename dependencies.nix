@@ -11,7 +11,7 @@
     nodePackages.typescript-language-server
     nodePackages.eslint
     gopls
-    golangci-lint
+    golangci-lint-langserver
     nodePackages.svelte-language-server
     # angularls
     # dotnet-sdk_7
