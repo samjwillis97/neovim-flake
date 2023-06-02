@@ -12,7 +12,6 @@ local lsp_to_configure = {
 	"tsserver",
 	"eslint",
 	"gopls",
-	"golangci_lint_ls",
 	"svelte",
 	"angularls",
 	"bashls",
