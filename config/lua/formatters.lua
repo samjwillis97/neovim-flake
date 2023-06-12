@@ -32,8 +32,14 @@ require("formatter").setup({
 		cs = {
 			require("formatter.filetypes.cs").dotnetformat,
 		},
+		typescriptreact = {
+			require("formatter.filetypes.typescript").prettier,
+		},
 		typescript = {
 			require("formatter.filetypes.typescript").prettier,
+		},
+		javascriptreact = {
+			require("formatter.filetypes.javascript").prettier,
 		},
 		javascript = {
 			require("formatter.filetypes.javascript").prettier,
