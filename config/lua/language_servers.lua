@@ -22,7 +22,6 @@ local lsp_to_configure = {
 	"rust_analyzer",
 	"nil_ls",
 	"lua_ls",
-	"elixirls",
 }
 
 -- Use an on_attach function to only map the following keys
