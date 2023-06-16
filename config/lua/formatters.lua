@@ -68,5 +68,8 @@ require("formatter").setup({
 		nix = {
 			require("formatter.filetypes.nix").nixfmt,
 		},
+		elixir = {
+			require("formatter.filetypes.elixir").mixformat,
+		},
 	},
 })

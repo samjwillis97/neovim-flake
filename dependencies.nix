@@ -25,6 +25,7 @@
     rust-analyzer
     nil
     lua-language-server
+    elixir-ls
 
     ## Debug Adapter Protocols
     delve
